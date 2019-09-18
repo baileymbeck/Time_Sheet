@@ -44,7 +44,7 @@ $("#submit-button").on("click", function(event) {
 });
 
     // this is get code use this later
-    database.ref().on("child-added", function(snapshot) {
+    database.ref().on("child_added", function(snapshot) {
         var snapshotVal = snapshot.val();
         console.log(snapshotVal.name, snapshotVal.role, snapshotVal.start, snapshotVal.rate);
         
