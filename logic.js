@@ -46,37 +46,61 @@ $("#submit-button").on("click", function(event) {
     // this is get code use this later
     database.ref().on("child-added", function(snapshot) {
         var snapshotVal = snapshot.val();
-        console.log(sv.name, snapshotVal.role, snapshotVal.start, snapshotVal.rate);
+        console.log(snapshotVal.name, snapshotVal.role, snapshotVal.start, snapshotVal.rate);
         
         // build a table row with jquery
+        var tableRow = $("<tr>");
 
         // build a td with jquery
+        var tableData = $("<td>");
         // set its text to the name
+        
+        tableData.text(snapshotVal.name);
         // append it to the table row
+        tableRow.append(tableData);
 
         // build a td with jquery
+        tableData = $("<td>");
         // set its text to the role
+        tableData.text(snapshotVal.role);
+
         // append it to the table row
+        tableRow.append(tableData);
 
         // build a td with jquery
+        tableData = $("<td>");
         // set its text to the start date
+        tableData.text(snapshotVal.start);
         // append it to the table row
+        tableRow.append(tableData);
 
         // build a td with jquery
+        tableData = $("<td>");
         // calculate the months worked and store in a variable
+        var monthsWorked = "7"
         // set the tds text to the the months worked
+        tableData.text(monthsWorked);
         // append it to the table row
+        tableRow.append(tableData);
 
         // build a td with jquery
+        tableData = $("<td>");
         // set its text to the rate
+        tableData.text(snapshotVal.rate);
         // append it to the table row
+        tableRow.append(tableData);
 
         // build a td with jquery
+        tableData = $("<td>");
         // calculate the total bill and store in a variable
+        var totalBilled = monthsWorked * snapshotVal.rate
         // set the tds text to the the total bill
+        tableData.text(totalBilled);
         // append it to the table row
+        tableRow.append(tableData);
 
         // append the table row to the table
+        $("#mytable").append(tableRow);
 
 
     }), function(error) {
