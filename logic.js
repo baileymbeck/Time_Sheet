@@ -14,16 +14,21 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
+var name = "";
+var role = "";
+var start = "";
+var rate = "";
+
 // when the submit button is clicked
 $("#submit-button").on("click", function(event) {
     // don't refresh!
     event.preventDefault();
 
     // get the values from the form
-    var name = $("#name-input").val();
-    var role = $("#role-input").val();
-    var start = $("#start-input").val();
-    var rate = $("#rate-input").val();
+    name = $("#name-input").val();
+    role = $("#role-input").val();
+    start = $("#start-input").val();
+    rate = $("#rate-input").val();
 
     console.log(name, role, start, rate);
 
