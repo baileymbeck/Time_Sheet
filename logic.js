@@ -77,7 +77,7 @@ $("#submit-button").on("click", function(event) {
         // build a td with jquery
         tableData = $("<td>");
         // calculate the months worked and store in a variable
-        var monthsWorked = "7"
+        var monthsWorked = getMonthsDiff(snapshotVal.start);
         // set the tds text to the the months worked
         tableData.text(monthsWorked);
         // append it to the table row
@@ -106,3 +106,11 @@ $("#submit-button").on("click", function(event) {
     }), function(error) {
         console.log("An error occured 💩💩💩", error);
     };
+
+    function getMonthsDiff(startDate) {
+        // moment(now.diff(randomMoment, 'months'))
+        startDate = moment(startDate, "MM/DD/YYYY")
+        var now = moment();
+     
+        return now.diff(startDate, 'months')
+    }
