@@ -39,11 +39,41 @@ $("#submit-button").on("click", function(event) {
 });
 
     // this is get code use this later
-    // database.ref().on("child-added", function(snapshot) {
-    //     var snapshotVal = snapshot.val();
-    //     console.log(sv.name);
-    //     console.log(snapshotVal.role);
-    //     console.log(snapshotVal.start);
-    //     console.log(snapshotVal.rate);
+    database.ref().on("child-added", function(snapshot) {
+        var snapshotVal = snapshot.val();
+        console.log(sv.name, snapshotVal.role, snapshotVal.start, snapshotVal.rate);
+        
+        // build a table row with jquery
 
-    // });
+        // build a td with jquery
+        // set its text to the name
+        // append it to the table row
+
+        // build a td with jquery
+        // set its text to the role
+        // append it to the table row
+
+        // build a td with jquery
+        // set its text to the start date
+        // append it to the table row
+
+        // build a td with jquery
+        // calculate the months worked and store in a variable
+        // set the tds text to the the months worked
+        // append it to the table row
+
+        // build a td with jquery
+        // set its text to the rate
+        // append it to the table row
+
+        // build a td with jquery
+        // calculate the total bill and store in a variable
+        // set the tds text to the the total bill
+        // append it to the table row
+
+        // append the table row to the table
+
+
+    }), function(error) {
+        console.log("An error occured 💩💩💩", error);
+    };
